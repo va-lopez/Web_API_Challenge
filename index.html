@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Quiz</title>
+    <link rel = "stylesheet" href = "./Assets/css/style.css">
+</head>
+<body>
+    <!--This header section will include a button to HighScores and display the timer.-->
+    <header>
+        <a href="highscores.html" id="highScores">View HighScores</a>
+        <h4 id="timer">Time: 0</h4>
+    </header>
+
+    <!--All the main content will be displayed here, instructions, questions, ect.-->
+    <main>
+        <div class="page-content" id="page-content">
+            <h2>Coding Quiz Challenge</h2>
+            <p>Try to answer the following questions within the time limit. Keep in mind that incorrect
+                answers will penalize your score/time by ten seconds!
+            </p>
+            <button class="btn" id="start_btn">Start Quiz</button>
+        </div>
+    </main>
+    <script src = "./Assets/js/script.js"></script>  
+</body>
+</html>

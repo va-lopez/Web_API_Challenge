@@ -1,0 +1,44 @@
+*{
+    font-family:Arial, Helvetica, sans-serif;
+}
+header{
+    display:flex;
+    padding:5px;
+    font-size:18px;
+    width:100%;
+    justify-content:space-between;
+    align-items:center;
+    height:40px;
+}
+
+#highScores{
+    text-decoration:none;
+    color: teal;
+}
+
+main{
+    padding-top:10px;
+}
+
+.page-content h2{
+    font-size:28px;
+    font-weight:bolder;
+}
+
+.page-content{
+    flex-wrap:wrap;
+    justify-content:center;
+    max-width:450px;
+    text-align:center;
+    margin:auto;
+}
+
+/*
+.btn{
+    background-color:teal;
+    border: none;
+    color:white;
+    padding:2px 5px;
+    text-align:center;
+    border-radius:5px;
+}*/
