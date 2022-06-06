@@ -1,9 +1,9 @@
 *{
     font-family:Arial, Helvetica, sans-serif;
+    box-sizing:content-box;
 }
 header{
     display:flex;
-    padding:5px;
     font-size:18px;
     width:100%;
     justify-content:space-between;
@@ -16,24 +16,28 @@ header{
     color: teal;
 }
 
-main{
-    padding-top:10px;
-}
-
-.page-content h2{
+.pageContent h2{
+    width: 100%;
     font-size:28px;
     font-weight:bolder;
 }
 
-.page-content{
+.pageContent{
     flex-wrap:wrap;
-    justify-content:center;
     max-width:450px;
     text-align:center;
     margin:auto;
 }
 
-/*
+.choices{
+    display:flex;
+    flex-direction:column;
+    flex-wrap:wrap;
+    justify-content:left;
+    text-align:left;
+    margin:auto;
+}
+
 .btn{
     background-color:teal;
     border: none;
@@ -41,4 +45,28 @@ main{
     padding:2px 5px;
     text-align:center;
     border-radius:5px;
-}*/
+}
+
+.btn:active{
+    opacity: 0.5;
+}
+
+.question{
+    font-size:28px;
+    text-align:left;
+}
+
+.answerChoice{
+    display:flex;
+    margin-bottom: 7px;
+    background-color:teal;
+    font-size: 18px;
+    border: none;
+    color:white;
+    padding:2px 10px;
+    border-radius:5px;
+}
+
+.answerChoice:active{
+    opacity: 0.5;
+}
