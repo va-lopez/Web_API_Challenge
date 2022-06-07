@@ -90,8 +90,14 @@ var mainPage = function(){
 }
 //function to start timer
 var startTimer = function (){
-    var savedHs = localStorage.setItem("highScores",JSON.stringify(highScores));
     startCountDown = setInterval(counter, 1000);
+}
+
+var loadHS = function(){
+    var savedHS = localStorage.getItem("highScores");
+    if(!savedHS)
+        return false;
+    highScores = JSON.parse(savedHS);
 }
 
 //counter decreases everytime called
@@ -188,40 +194,70 @@ var showFinalScore = function(){
 
     //rename classes and text content
     titleEl.className = ('heading');
+    displayScore.className = ('display');
+    enterScore.className =('formSubmit');
+    initialLable.className = ('label');
+    enterInitials.className = ('')
+
+
     titleEl.textContent = "All done!";
     submitBtn.textContent = "Submit";
+    submitBtn.setAttribute("type", "submit");
     displayScore.textContent = ("Your final score is " + score);
     initialLable.textContent = ("Enter initials: ");
     
 }
 
-var saveHs = function(){
+var saveYourHs = function(event){
     event.preventDefault();
-
-    console.log(enterInitials.value)
     var inputName = enterInitials.value;
 
     //check to see if initials were entered
-    if(!enterInitials){
+    if(!inputName){
         alert("You need to enter Initials");
         return false;
     }
 
-    var savedHs = localStorage.getItem("highScores");
-    if(!savedHs)
-        return false;
+    var entry = {
+        name:inputName,
+        score: timer
+    }
 
-    savedHs = JSON.parse(savedHs);
+    sortHS(entry);
+    //cut the length of array at 10
+    if(highScores.length>10){
+        highScores.splice(-1,1);
+        console.log(highScores);
+    }
 
-    savedHs.push(inputName);
-
-
-    //reset input
-    enterInitials.value = "";
+    localStorage.setItem("highScores", JSON.stringify(highScores));
 }
 
+var sortHS = function(entry){
+    if(!highScores){
+        highScores.push(entry);
+        return true;
+    }
 
+    //compare to put entry into the correct index
+    for (let i = 0; i < highScores.length; i++){
+        //check to see if the current entry is greater than any on the exsisting list
+        if(entry.score>highScores[i].score){
+            highScores.splice(i,0,entry);
+            return true;
+        }
+    }
+    highScores.push(entry);   
+}
+
+var testFunction = function(event)
+{
+    event.preventDefault();
+    console.log("entered into this function");
+}
+
+loadHS();
 mainPage();
 buttonEl.addEventListener('click',startTimer);
 answerChoices.addEventListener('click', checkAnswers);
-submitBtn.addEventListener('submit', saveHs);
+submitBtn.addEventListener('click', saveYourHs);

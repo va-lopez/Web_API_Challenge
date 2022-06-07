@@ -70,3 +70,13 @@ header{
 .answerChoice:active{
     opacity: 0.5;
 }
+
+.centerList{
+    display:flex;
+}
+
+.hSPageTitle{
+    color:teal;
+    font-weight:bolder;
+}
+
