@@ -18,3 +18,8 @@ https://va-lopez.github.io/Web_API_Challenge/
 
 Link to screenshots:
 .assets/images/
+
+![Main Page](./assets/images/main_page.png)
+![Questions Page](./assets/images/questions.png)
+![Enter your HighScores](./assets/images/enterHs.png)
+![Display the High Scores](./assets/images/displayHs.png)
