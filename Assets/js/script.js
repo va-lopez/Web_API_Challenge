@@ -46,7 +46,7 @@ count = 0;
 
 //for timer
 var showTimer = document.querySelector('#timer');
-var duration =5;
+var duration =100;
 var timer =duration;
 var startCountDown;
 //for starting page

@@ -1,42 +1,20 @@
-# 04 Web APIs: Code Quiz
+#Web_API_CHALLENGE
+An application that when run will begin a short 5 question quiz on javascript.
 
-As you proceed in your career as a web developer, you will probably be asked to complete a coding assessment, which is typically a combination of multiple-choice questions and interactive challenges. For this challenge, you will build a timed code quiz that's made up of multiple-choice questions. This app will run in the browser and feature dynamically updated HTML and CSS powered by your JavaScript code. It will also feature a clean and polished user interface and be responsive, ensuring that it adapts to multiple screen sizes.
+When the user selects "start quiz" the first question will get displayed along with the 4 multiple choice buttons. 
 
-## User Story
+The user will click their answers and will have 100 seconds to complete the quiz. When the user selects an incorrect answer, 10 seconds are removed from the timer.
 
-```
-AS A coding boot camp student
-I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
-SO THAT I can gauge my progress compared to my peers
-```
+The user's final score will be the amount of time left. At the end of the quiz, the user is prompted to enter in their initials to display their score in the high scores list. 
 
-## Acceptance Criteria
+When the user clicks submit, their initials are added to the local storage and sorted into descending order. 
 
-```
-GIVEN I am taking a code quiz
-WHEN I click the Start button
-THEN a timer starts and I am presented with a question
-WHEN I answer a question
-THEN I am presented with another question
-WHEN I answer a question incorrectly
-THEN time is subtracted from the clock
-WHEN all questions are answered or the timer reaches 0
-THEN the game is over
-WHEN the game is over
-THEN I can save my initials and score
-```
+If the user clicks on highscores, they are taken to the highscores html page where the list of highscores is saved.
 
-The following animation demonstrates the application functionality:
+The user may return to the main page to retake the quiz, or clear the list of all the high scores.
 
-![Demonstration of the Coding Quiz Challenge.](./Assets/04-web-apis-homework-demo.gif)
+Link to deployed application:
+https://va-lopez.github.io/Web_API_Challenge/
 
-### Review
-
-You are required to submit the following for review:
-
-* The URL of the functional, deployed application.
-
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
-
----
-© 2022 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
+Link to screenshots:
+.Assets/images/screenshots_of_working_demo
