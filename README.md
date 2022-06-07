@@ -17,4 +17,4 @@ Link to deployed application:
 https://va-lopez.github.io/Web_API_Challenge/
 
 Link to screenshots:
-.Assets/images/screenshots_of_working_demo
+.assets/images/
