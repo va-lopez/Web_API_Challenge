@@ -2,6 +2,8 @@
     font-family:Arial, Helvetica, sans-serif;
     box-sizing:content-box;
 }
+
+/* CSS for main page*/
 header{
     display:flex;
     font-size:18px;
@@ -16,35 +18,42 @@ header{
     color: teal;
 }
 
-.pageContent h2{
+.title{
     width: 100%;
     font-size:28px;
     font-weight:bolder;
+    color:teal;
+}
+
+main{
+    display:flex;
+    align-items:center;
+    justify-content: center;
 }
 
 .pageContent{
     flex-wrap:wrap;
     max-width:450px;
     text-align:center;
-    margin:auto;
 }
 
+/* css for page when displaying question and answers */
 .choices{
     display:flex;
     flex-direction:column;
     flex-wrap:wrap;
     justify-content:left;
     text-align:left;
-    margin:auto;
 }
 
 .btn{
     background-color:teal;
     border: none;
     color:white;
-    padding:2px 5px;
+    padding:5px 8px;
     text-align:center;
     border-radius:5px;
+    font-size:18px;
 }
 
 .btn:active{
@@ -52,8 +61,9 @@ header{
 }
 
 .question{
-    font-size:28px;
+    font-size:24px;
     text-align:left;
+    font-weight:lighter;
 }
 
 .answerChoice{
@@ -71,12 +81,66 @@ header{
     opacity: 0.5;
 }
 
-.centerList{
-    display:flex;
+/*CSS for displaying current user score*/
+.scoreTitle{
+    color: teal;
+    text-align: left;
+    line-height: 0px;
+    font-size:28px;
 }
 
-.hSPageTitle{
+.display{
+    text-align:left;
+    line-height:20px;
+    font-size:24px;
+}
+
+.label{
+    font-size:18px;
+}
+
+.inputEl{
+    margin-left:5px;
+}
+
+.toHsPage{
+    font-size:18px;
+    margin-left:5px;
+    background-color:teal;
+    font-size: 18px;
+    border: none;
+    color:white;
+    padding:2px 10px;
+    border-radius:5px;
+}
+
+/* CSS for high scores page */
+#highScorePage{
+    display:flex;
+    align-items: center;
+    justify-content:center;
+}
+
+.centerList{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+h2#hSPageTitle{
     color:teal;
     font-weight:bolder;
 }
 
+.listHs{
+    list-style:none;
+}
+
+.goBack{
+    text-decoration:none;
+    color:white;
+}
+
+.formSubmit{
+    display:flex;
+}

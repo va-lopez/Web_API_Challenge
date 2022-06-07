@@ -46,7 +46,8 @@ count = 0;
 
 //for timer
 var showTimer = document.querySelector('#timer');
-var timer = 100;
+var duration =5;
+var timer =duration;
 var startCountDown;
 //for starting page
 var pageContentEl = document.querySelector('#pageContent');
@@ -55,6 +56,7 @@ var instructions = document.createElement("p");
 var buttonEl = document.createElement('button');
 
 //for end of test display
+var scoreContainer = document.createElement("div");
 var displayScore = document.createElement("p");
 var enterScore = document.createElement("form");
 var initialLable = document.createElement("lable");
@@ -106,14 +108,15 @@ var counter = function(){
     if(timer === 0){
         clearInterval(startCountDown);
         showFinalScore();
+        event.stopPropagation;
     }
+
+    //displayQuestions is only called once from the counter and thats when the counter starts
+   // if(timer===duration-1)
+    displayQuestions();
 
     timer--;
     updateTimer();
-
-    //displayQuestions is only called once from the counter and thats when the counter starts
-    if(timer===99)
-        displayQuestions();
 }
 
 var updateTimer = function(){
@@ -182,20 +185,19 @@ var showFinalScore = function(){
     score = timer;
 
     //remove the answer buttons
-    answerA.remove();
-    answerB.remove();
-    answerC.remove();
-    answerD.remove();
+    answerChoices.remove();
+
     //replace with ending page elements
-    pageContentEl.appendChild(displayScore);
-    pageContentEl.appendChild(enterScore);
+    pageContentEl.appendChild(scoreContainer);
+    scoreContainer.appendChild(displayScore);
+    scoreContainer.appendChild(enterScore);
     enterScore.appendChild(initialLable);
     enterScore.appendChild(enterInitials);
-    pageContentEl.appendChild(linkToHsPage);
-    linkToHsPage.appendChild(submitBtn);
+    enterScore.appendChild(submitBtn);
+    submitBtn.appendChild(linkToHsPage);
 
     //rename classes and text content
-    titleEl.className = ('heading');
+    titleEl.className = ('scoreTitle');
     displayScore.className = ('display');
     enterScore.className =('formSubmit');
     initialLable.className = ('label');
@@ -204,9 +206,8 @@ var showFinalScore = function(){
 
 
     titleEl.textContent = "All done!";
-    submitBtn.textContent = "Submit";
-    linkToHsPage.setAttribute("href", "highscores.html");
-    submitBtn.setAttribute("type", "submit");
+    linkToHsPage.textContent = "Submit";
+    submitBtn.setAttribute("onclick", "highscores.html");
     displayScore.textContent = ("Your final score is " + score);
     initialLable.textContent = ("Enter initials: ");
     
@@ -235,6 +236,7 @@ var saveYourHs = function(event){
     }
 
     localStorage.setItem("highScores", JSON.stringify(highScores));
+    location.replace("highscores.html")
 }
 
 //Sort through the high scores to put them in descending order
