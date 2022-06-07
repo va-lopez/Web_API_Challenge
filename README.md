@@ -21,5 +21,5 @@ Link to screenshots:
 
 ![Main Page](./assets/images/main_page.png)
 ![Questions Page](./assets/images/questions.png)
-![Enter your HighScores](./assets/images/enterHs.png)
+![Enter your HighScores](./assets/images/enterHS.png)
 ![Display the High Scores](./assets/images/displayHs.png)
